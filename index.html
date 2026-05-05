@@ -365,7 +365,7 @@
   .timeline-content p{font-size:0.78rem;color:var(--muted);}
 
   /* ─── PROJECTS ─── */
-  .projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .projects-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;}
   .project-card{
     background:var(--surface);border:1px solid var(--border);
     border-radius:18px;padding:30px 26px;backdrop-filter:blur(16px);
@@ -545,6 +545,9 @@
   }
 
   /* ─── RESPONSIVE ─── */
+  @media(max-width:1100px){
+    .projects-grid{grid-template-columns:repeat(2,1fr);}
+  }
   @media(max-width:900px){
     nav{padding:16px 22px;}
     .hero-inner{gap:48px;}
@@ -619,10 +622,11 @@
       <div class="profile-glow"></div>
       <div class="profile-ring-outer">
         <div class="profile-ring-inner">
-          <img id="profile-img" src="" alt="Harish A" style="display:none;">
-          <div class="profile-placeholder" id="profile-placeholder">
+          <!-- Put your image in the same folder or inside assets folder and update this path -->
+          <img id="profile-img" src="assets/profile.jpg" alt="Harish A" onerror="this.style.display='none';document.getElementById('profile-placeholder').style.display='flex';" style="display:block;">
+          <div class="profile-placeholder" id="profile-placeholder" style="display:none;">
             <span class="avatar-icon">👤</span>
-            <span class="upload-hint">Click below to<br>add your photo</span>
+            <span class="upload-hint">Add your photo as<br>assets/profile.jpg</span>
           </div>
         </div>
       </div>
@@ -630,7 +634,7 @@
         <span class="status-dot"></span>
         Available
       </div>
-      <!-- upload -->
+      <!-- upload: optional live preview. For GitHub Pages, keep your photo as assets/profile.jpg -->
       <div class="pic-hint">
         <span>📷</span>
         <label for="pic-upload">Upload your photo</label>
@@ -668,7 +672,7 @@
       </div>
 
       <div class="hero-stats">
-        <div class="stat"><span class="stat-num">3+</span><span class="stat-label">AI Projects</span></div>
+        <div class="stat"><span class="stat-num">4+</span><span class="stat-label">Projects</span></div>
         <div class="stat"><span class="stat-num">7+</span><span class="stat-label">Tech Skills</span></div>
         <div class="stat"><span class="stat-num">∞</span><span class="stat-label">Curiosity</span></div>
       </div>
@@ -701,6 +705,7 @@
           <span class="chip">Robotics</span>
           <span class="chip">Design Engineering</span>
           <span class="chip">Raspberry Pi</span>
+          <span class="chip">Structural Analysis</span>
         </div>
       </div>
       <div class="about-card reveal">
@@ -787,6 +792,19 @@
           View Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
       </div>
+      <div class="project-card reveal">
+        <div class="project-emoji">🏗️</div>
+        <h3>Python Structural Frame Analysis</h3>
+        <p>Python-based mathematical modelling tool for structural frame analysis. Takes frame dimensions, material properties, tube size, support points, and load points to estimate reactions, stress, deflection, and safety factor.</p>
+        <div class="project-tags">
+          <span class="project-tag">Python</span>
+          <span class="project-tag">Structural Analysis</span>
+          <span class="project-tag">Mechanical Design</span>
+        </div>
+        <a href="https://github.com/Harish-Asaithambi/Python-Based-Structural-Frame-Analysis" class="project-link" target="_blank">
+          View Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
     </div>
   </div>
 </section>
@@ -839,6 +857,11 @@
           <p class="skill-desc">Numerical modelling, control system simulation and signal processing.</p>
           <div class="skill-bar-bg"><div class="skill-bar-fill" data-pct="75"></div></div>
         </div>
+        <div class="skill-item">
+          <div class="skill-meta"><span class="skill-name">Structural Analysis</span><span class="skill-pct">78%</span></div>
+          <p class="skill-desc">Frame load modelling, material selection, stress estimation and safety-factor checking.</p>
+          <div class="skill-bar-bg"><div class="skill-bar-fill" data-pct="78"></div></div>
+        </div>
       </div>
     </div>
     <div class="skill-category reveal" style="margin-top:26px;">
@@ -852,6 +875,7 @@
         <div class="skill-icon-item"><span class="icon">📊</span><span class="label">MATLAB</span></div>
         <div class="skill-icon-item"><span class="icon">🐙</span><span class="label">GitHub</span></div>
         <div class="skill-icon-item"><span class="icon">⚡</span><span class="label">AI Systems</span></div>
+        <div class="skill-icon-item"><span class="icon">🏗️</span><span class="label">Frame Analysis</span></div>
       </div>
     </div>
   </div>
@@ -952,6 +976,7 @@ const phrases = [
   'Embedded AI',
   'Autonomous Robotics',
   'OpenCV Pipelines',
+  'Structural Frame Analysis',
 ];
 let pi=0,ci=0,deleting=false;
 const tw = document.getElementById('typewriter');
